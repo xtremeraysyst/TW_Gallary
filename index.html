@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Photo Gallery</title>
+    <style>
+      .hero-slider {
+        transition: background-image 1s ease-in-out;
+        background-size: cover;
+        background-position: center;
+      }
+      .slider-btn {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: rgba(0, 0, 0, 0.5);
+        color: white;
+        padding: 1rem;
+        cursor: pointer;
+        transition: all 0.3s;
+      }
+      .slider-btn:hover {
+        background: rgba(0, 0, 0, 0.8);
+      }
+      .prev-btn {
+        left: 1rem;
+      }
+      .next-btn {
+        right: 1rem;
+      }
+    </style>
+  </head>
+  <body class="bg-black">
+    <nav class="fixed w-full z-50 bg-transparent">
+      <div class="container mx-auto px-6 py-4">
+        <div class="flex items-center justify-between">
+          <div class="text-white text-2xl font-bold">JS24/1v</div>
+          <div class="hidden md:flex space-x-8">
+            <a href="index.html" class="text-white hover:text-gray-300">HOME</a>
+            <a href="gallery.html" class="text-white hover:text-gray-300"
+              >GALLERY</a
+            >
+            <a href="n18.html" class="text-white hover:text-gray-300">N-18</a>
+            <a href="about.html" class="text-white hover:text-gray-300"
+              >ABOUT</a
+            >
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <div
+      id="hero"
+      class="hero-slider h-screen w-full relative bg-center bg-cover"
+      style="background-image: url('./img/img1.jpg')"
+    >
+      <div class="absolute inset-0 bg-black bg-opacity-50">
+        <div class="container mx-auto px-6 h-full flex items-center">
+          <div class="text-white max-w-lg">
+            <h1 class="text-5xl font-bold mb-4">Shule</h1>
+            <p class="text-xl">RAWRRRRRRRRRRRRRRRRRRR</p>
+          </div>
+        </div>
+      </div>
+      <button
+        class="slider-btn prev-btn rounded-full"
+        onclick="changeSlide(-1)"
+      >
+        ❮
+      </button>
+      <button class="slider-btn next-btn rounded-full" onclick="changeSlide(1)">
+        ❯
+      </button>
+    </div>
+
+    <script>
+      const images = [
+        "./img/img1.jpg",
+        "./img/img2.jpg",
+        "./img/img3.jpg",
+        "./img/img4.jpg",
+      ];
+      let currentIndex = 0;
+      const heroElement = document.getElementById("hero");
+
+      function changeSlide(direction) {
+        currentIndex =
+          (currentIndex + direction + images.length) % images.length;
+        updateBackground();
+      }
+
+      function updateBackground() {
+        heroElement.style.opacity = "0";
+        setTimeout(() => {
+          heroElement.style.backgroundImage = `url('${images[currentIndex]}')`;
+          heroElement.style.opacity = "1";
+        }, 300);
+      }
+
+      function autoChange() {
+        changeSlide(1);
+      }
+
+      heroElement.style.transition = "opacity 0.3s ease-in-out";
+      setInterval(autoChange, 5000);
+    </script>
+  </body>
+</html>

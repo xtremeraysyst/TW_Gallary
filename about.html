@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Photo Gallery</title>
+    <style>
+      .about-section {
+        min-height: 100vh;
+        padding-top: 120px;
+        padding-bottom: 60px;
+      }
+      .about-container {
+        max-width: 800px;
+        margin: 0 auto;
+        background-color: rgba(17, 17, 17, 0.7);
+        border-radius: 12px;
+        padding: 40px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        border: 1px solid #333;
+      }
+      .about-image {
+        border-radius: 12px;
+        overflow: hidden;
+        margin-bottom: 30px;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+      }
+      .about-title {
+        font-size: 2.5rem;
+        margin-bottom: 1.5rem;
+        color: #fff;
+        font-weight: 700;
+        position: relative;
+        display: inline-block;
+      }
+      .about-title:after {
+        content: "";
+        position: absolute;
+        bottom: -10px;
+        left: 0;
+        width: 60px;
+        height: 3px;
+        background-color: #6366f1;
+      }
+      .about-text {
+        color: #e5e5e5;
+        line-height: 1.8;
+        font-size: 1.1rem;
+        margin-bottom: 1.5rem;
+      }
+    </style>
+  </head>
+  <body class="bg-black">
+    <nav class="fixed w-full z-50 bg-transparent">
+      <div class="container mx-auto px-6 py-4">
+        <div class="flex items-center justify-between">
+          <div class="text-white text-2xl font-bold">JS24/1v</div>
+          <div class="hidden md:flex space-x-8">
+            <a href="index.html" class="text-white hover:text-gray-300">HOME</a>
+            <a href="gallery.html" class="text-white hover:text-gray-300"
+              >GALLERY</a
+            >
+            <a href="n18.html" class="text-white hover:text-gray-300">N-18</a>
+            <a href="about.html" class="text-white hover:text-gray-300"
+              >ABOUT</a
+            >
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <section class="about-section">
+      <div class="container mx-auto px-6">
+        <div class="about-container">
+          <div class="about-image">
+            <img src="./img/img1.jpg" alt="JS24/1v Grupė" />
+          </div>
+
+          <h1 class="about-title">Apie Mus</h1>
+
+          <p class="about-text">
+            Sveiki! Mes esame JS24/1v grupė - draugiška ir energinga klase (po
+            3L energo). Mūsų grupę vienija ne tik studijos, bet ir bendri
+            pomėgiai, nuotykiai bei nepamirštamos akimirkos (Sakykim tai tiesa
+            🧢).
+          </p>
+
+          <p class="about-text">
+            Šioje galerijoje rasite mūsų grupės photo - nuo pirmųjų pažinties
+            dienų iki šiandien. Čia užfiksuotos beveik viskas LOL.
+          </p>
+
+          <h2 class="text-xl text-indigo-400 font-semibold mt-8 mb-4">
+            Grupės Istorija
+          </h2>
+
+          <p class="about-text">
+            Mūsų istorija prasidėjo 2024 metų rugesji, kai pirmą kartą
+            susitikome studijų pradžioje.
+          </p>
+
+          <p class="about-text">
+            Per šį laiką kartu šventėme gimtadienius (0 gimtadieniu 10 plotu),
+            organizavome išvykas į gamtą (istikruju i plotus), dalyvavome
+            įvairiuose renginiuose, pvz: plote. Žinoma, kartu įveikėme ne vieną
+            sudėtingą projektą ar egzaminą ir ofc pagirias.
+          </p>
+
+          <div class="mt-10 pt-8 border-t border-gray-700">
+            <p class="text-gray-400 text-sm text-center">
+              © 2024 JS24/1v Grupė. Visos teisės saugomos.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
